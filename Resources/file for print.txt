@@ -1,0 +1,22 @@
+﻿SuratJalan::SELECT 
+suratJalan.noSurat AS noSurat, 
+karyawan.nama AS nama, 
+nota.tanggalNota AS tanggalNota, 
+pengirim.idPengirim AS idPengirim, 
+pengirim.namaPengirim AS namaPengirim, 
+pengirim.noHpPengirim AS noHpPengirim, 
+penerima.namaPenerima AS namaPenerima, 
+penerima.noHpPenerima AS noHpPenerima, 
+penerima.alamatPenerima AS alamatPenerima, 
+penerima.kotaPenerima AS kotaPenerima, 
+nota.noNota AS noNota, 
+detail.namaBarang AS namaBarang, 
+detail.jenisBarang AS jenisBarang, 
+biayaExpedisi.biayaKirim AS biayaKirim 
+FROM 
+suratJalan suratJalan INNER JOIN karyawan karyawan ON suratJalan.nik = karyawan.nik 
+INNER JOIN nota nota ON suratJalan.noNota = nota.noNota 
+INNER JOIN pengirim pengirim ON nota.idPengirim = pengirim.idPengirim 
+INNER JOIN penerima penerima ON nota.idPenerima = penerima.idPenerima 
+INNER JOIN detail detail ON nota.noNota = detail.noNota 
+INNER JOIN biayaExpedisi biayaExpedisi ON detail.kotaTujuan = biayaExpedisi.kotaTujuan

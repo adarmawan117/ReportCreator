@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a0d6d1d-5801-4309-9157-108b18922b7f">
+	<property name="ireport.zoom" value="1.3080639266124634"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="jumlahData" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     nik,
+     nama,
+     alamat,
+     jenisKelamin,
+     noHpKaryawan
+FROM
+     karyawan]]>
+	</queryString>
+	<field name="nik" class="java.lang.Object"/>
+	<field name="nama" class="java.lang.Object"/>
+	<field name="alamat" class="java.lang.Object"/>
+	<field name="jenisKelamin" class="java.lang.Object"/>
+	<field name="noHpKaryawan" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="1" y="0" width="400" height="62" uuid="434dd573-18bf-488a-8474-030fb66d5521"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Data Karyawan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="91ffa6f3-7dce-4507-9b0a-6ddb3b16b5c0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="1" height="16" uuid="8fac86a8-44a4-4a10-90a1-fbfa7a37c87a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="109" height="15" forecolor="#736343" uuid="fb176841-0efa-4342-997e-41ca1e442143"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="110" y="0" width="1" height="16" uuid="e78bd41a-3432-4abf-925f-4b9016f7e7ce"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="111" y="0" width="111" height="15" forecolor="#736343" uuid="b5630f3b-adf3-4e5a-9652-43e068ea049f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="222" y="0" width="1" height="16" uuid="72b49b33-29e5-4a64-b605-d18b792b62f2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="223" y="0" width="109" height="15" forecolor="#736343" uuid="0e0ba14e-c93a-4b99-95e3-9ade05decc01"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="332" y="0" width="1" height="16" uuid="dce27b22-c3db-4933-a948-f3a2bcea154f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="333" y="0" width="111" height="15" forecolor="#736343" uuid="4c88a5b4-10e3-4dbd-b11d-5b840a0148fa"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="444" y="0" width="1" height="16" uuid="4ec84241-b753-4e10-bd20-3625a779d8cd"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="445" y="0" width="110" height="15" forecolor="#736343" uuid="7aa7ee60-aea7-4732-be7a-cc57ec029872"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="554" y="0" width="1" height="16" uuid="bb64a509-fa05-480f-bf00-927f2dcac1fa"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="475600c1-7937-415c-863b-6bab2d40d48d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="074d8226-f43b-4ff0-8c54-c73c7c52d2ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="1" y="0" width="109" height="15" uuid="ab74ff5a-7ad4-46b5-b9a4-ce366ba3eff4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[""+$F{nik}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="111" y="0" width="111" height="15" uuid="a2cb7665-7d45-4ff6-82aa-4f0879666b7e"/>
+				<textFieldExpression><![CDATA[""+$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="223" y="0" width="109" height="15" uuid="bc48b1e4-2ae6-4da8-9099-56b065175ad8"/>
+				<textFieldExpression><![CDATA[""+$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="333" y="0" width="111" height="15" uuid="fc270ea9-ccb8-4d04-a0c3-3a400993fb85"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[""+$F{jenisKelamin}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="445" y="0" width="110" height="15" uuid="7edef9bc-aa7f-4e72-881e-2b5f8c3df20c"/>
+				<textFieldExpression><![CDATA[""+$F{noHpKaryawan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="1" height="16" uuid="5cec31b1-2ae4-4ea2-88f9-6bc9ca2df13b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="110" y="0" width="1" height="16" uuid="6ba4c260-bfe2-441d-a73b-42f3a83e51ab"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="222" y="0" width="1" height="16" uuid="0b88648f-2a53-43e8-bd0f-82b7cf4350d8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="332" y="0" width="1" height="16" uuid="60097216-9686-42b2-90a0-fe5de5a6a19e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="444" y="0" width="1" height="16" uuid="db8bd21c-4809-4295-9cee-1180a1601c9a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="554" y="0" width="1" height="16" uuid="221a4712-227c-4e39-9d02-19d678c59ab7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b3e25d4-37ca-46be-a053-117709661378">
+	<property name="ireport.zoom" value="1.210000000000004"/>
+	<property name="ireport.x" value="71"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     nota.tanggalNota AS tanggalNota,
+     penerima.namaPenerima AS namaPenerima,
+     penerima.alamatPenerima AS alamatPenerima,
+     pengirim.namaPengirim AS namaPengirim,
+     biayaExpedisi.biayaKirim AS biayaKirim,
+     pengirim.idPengirim AS idPengirim
+FROM
+     detail detail INNER JOIN biayaExpedisi biayaExpedisi ON detail.kotaTujuan = biayaExpedisi.kotaTujuan
+     INNER JOIN nota nota ON detail.noNota = nota.noNota
+     INNER JOIN pengirim pengirim ON nota.idPengirim = pengirim.idPengirim
+     INNER JOIN penerima penerima ON nota.idPenerima = penerima.idPenerima]]>
+	</queryString>
+	<field name="tanggalNota" class="java.lang.Object"/>
+	<field name="namaPenerima" class="java.lang.Object"/>
+	<field name="alamatPenerima" class="java.lang.Object"/>
+	<field name="namaPengirim" class="java.lang.Object"/>
+	<field name="biayaKirim" class="java.lang.Object"/>
+	<field name="idPengirim" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="501" height="62" uuid="f362c111-c200-4aa0-9874-0c3f3a91f69f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Perbulan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="373425ee-ef2c-4452-91bb-c3a8b56f50b7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="134" y="1" width="167" height="15" forecolor="#736343" uuid="e0ad4a2b-74ee-4c4e-8613-87987feefabc"/>
+				<text><![CDATA[Nama Penerima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="301" y="0" width="235" height="15" forecolor="#736343" uuid="3ab2ef96-e14e-4dca-811a-d780ac39b835"/>
+				<text><![CDATA[Alamat Penerima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="536" y="0" width="133" height="15" forecolor="#736343" uuid="aa978f21-b258-49df-8bc9-ed80973090cf"/>
+				<text><![CDATA[Nama Pengirim]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="669" y="0" width="133" height="15" forecolor="#736343" uuid="45230cd8-b971-48f8-99cb-e0b0fa806420"/>
+				<text><![CDATA[Biaya Kirim]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="1" height="16" uuid="7aeaabb0-9dce-4d91-9ef3-e1edb3f05551"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="2" y="0" width="132" height="15" forecolor="#736343" uuid="b5605b16-609a-4708-9164-46187c95723e"/>
+				<text><![CDATA[Tanggal Nota]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="f75629d8-fe0e-4b07-89de-656e26fb71db"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="134" y="0" width="167" height="15" uuid="61aec516-46e2-4281-a009-7a56ccf37531"/>
+					<textFieldExpression><![CDATA[""+$F{namaPenerima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="301" y="0" width="235" height="15" uuid="81015f92-015b-49cc-8cbf-0d8d49f0617c"/>
+					<textFieldExpression><![CDATA[""+$F{alamatPenerima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="536" y="0" width="133" height="15" uuid="b380f940-d789-4f9d-a413-ff933c1c6eb8"/>
+					<textFieldExpression><![CDATA[""+$F{namaPengirim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="669" y="0" width="133" height="15" uuid="54b24e3f-04d6-4720-9c2d-90cc95226be1"/>
+					<textFieldExpression><![CDATA[""+$F{biayaKirim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="1" y="0" width="133" height="15" uuid="8a112590-6a1e-4d3b-8d81-346cf2d889d5"/>
+					<textFieldExpression><![CDATA[""+$F{tanggalNota}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="d092753d-2846-47f3-b760-470236da07af"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="070be17b-f997-48f0-a329-3c54a18e1354"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="e4d77157-94fc-4dad-8503-e7c2e8d5905f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="6b4f8329-217b-4012-ac54-d63ebcf1e02c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

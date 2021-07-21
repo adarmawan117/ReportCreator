@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c52f5c7b-f3bc-43f5-9df6-afb755f8571e">
+	<property name="ireport.zoom" value="0.8264462809917373"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     penerima.idPenerima AS idPenerima,
+     penerima.namaPenerima AS namaPenerima,
+     penerima.noHpPenerima AS noHpPenerima,
+     penerima.alamatPenerima AS alamatPenerima
+FROM
+     penerima penerima]]>
+	</queryString>
+	<field name="idPenerima" class="java.lang.Object"/>
+	<field name="namaPenerima" class="java.lang.Object"/>
+	<field name="noHpPenerima" class="java.lang.Object"/>
+	<field name="alamatPenerima" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="1" y="0" width="263" height="62" uuid="5ede2d33-7d0c-4710-b64f-7c9bc4a6776a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Data Penerima]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="f99a1f6e-4918-426b-9827-a60ddd038a44"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="99" height="15" forecolor="#736343" uuid="5a6cf741-3b25-4278-a499-2486d3fe15af"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="99" y="0" width="200" height="15" forecolor="#736343" uuid="551f3b25-ff77-4867-aa62-d8ac288bebb7"/>
+				<text><![CDATA[Nama Penerima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="299" y="0" width="200" height="15" forecolor="#736343" uuid="c77f8b23-1fef-4e70-9f81-7272785b6bec"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="499" y="0" width="301" height="15" forecolor="#736343" uuid="ecc2efa6-9d83-4623-9065-4bccc91839c3"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="c71c5e8e-2cf7-4258-976d-3d8230772219"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="99" height="15" uuid="84b6a7c3-ff0f-46f4-9701-803da96a5c63"/>
+					<textFieldExpression><![CDATA[""+$F{idPenerima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="99" y="0" width="200" height="15" uuid="99a554c1-66ae-4075-a249-aaacb16e8ff0"/>
+					<textFieldExpression><![CDATA[""+$F{namaPenerima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="499" y="0" width="301" height="15" uuid="97c69afd-ccfe-4964-869f-d577b43d181f"/>
+					<textFieldExpression><![CDATA[""+$F{alamatPenerima}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="299" y="0" width="200" height="15" uuid="7c8c2025-2ff3-4fce-b8d4-460fa7d7f99f"/>
+					<textFieldExpression><![CDATA[""+$F{noHpPenerima}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

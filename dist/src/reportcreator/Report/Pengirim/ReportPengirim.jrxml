@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e1b2658-2b73-4686-a10e-d7121c9427a2">
+	<property name="ireport.zoom" value="1.2418426461183107"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     idPengirim,
+     namaPengirim,
+     noHpPengirim,
+alamatPengirim
+FROM
+     pengirim]]>
+	</queryString>
+	<field name="idPengirim" class="java.lang.Object"/>
+	<field name="namaPengirim" class="java.lang.Object"/>
+	<field name="noHpPengirim" class="java.lang.Object"/>
+	<field name="alamatPengirim" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="1" y="0" width="263" height="62" uuid="63455b82-cc78-4894-878a-9008e78dec9f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Data Pengirim]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="dc0b6a6e-882a-4ec8-a1e3-38eb1fb6d9bb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="103" height="15" forecolor="#736343" uuid="a04edb37-e244-4396-9f37-b27763c7b5d6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="103" y="0" width="173" height="15" forecolor="#736343" uuid="eb9cd5f0-f050-465d-ad8e-9907344e883e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="0" width="125" height="15" forecolor="#736343" uuid="22258ab7-a954-4bf7-b7e6-38875fdd810d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="401" y="0" width="154" height="15" forecolor="#736343" uuid="bf62eec4-6729-487e-9571-4a77f572dc94"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="bbb12aa7-0fbf-4ddd-9881-70ac7f754f61"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="103" height="15" uuid="2bb46475-e8ea-4532-9181-c2771529a432"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[""+$F{idPengirim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="103" y="0" width="173" height="15" uuid="23f649de-98ec-40dd-bdaa-0461f1d92b0a"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[""+$F{namaPengirim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="276" y="0" width="125" height="15" uuid="35432ff9-c473-45a4-bcfe-9810f8730768"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[""+$F{noHpPengirim}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="401" y="0" width="154" height="15" uuid="60f666ac-79a2-4b52-a219-b31117c4cf63"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{alamatPengirim}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
