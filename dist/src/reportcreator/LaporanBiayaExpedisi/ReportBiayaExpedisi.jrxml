@@ -65,7 +65,7 @@ FROM
 					<reportElement style="Detail" x="0" y="0" width="401" height="15" uuid="4f777830-1465-41f5-a50d-cbcd15671e78"/>
 					<textFieldExpression><![CDATA[""+$F{kotaTujuan}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00">
 					<reportElement style="Detail" x="401" y="0" width="401" height="15" uuid="43e49208-44f3-4b56-a75f-2711650399c3"/>
 					<textFieldExpression><![CDATA[""+$F{biayaKirim}]]></textFieldExpression>
 				</textField>

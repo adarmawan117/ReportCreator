@@ -60,6 +60,7 @@ public class ReportCreator {
             listReportPath.add(reportPath + "Report/LaporanPerbulan/ReportPerbulan.jrxml");
             listReportPath.add(reportPath + "Report/Pengirim/ReportPengirim.jrxml");
             listReportPath.add(reportPath + "ReportKaryawan/ReportKaryawan2.jrxml");
+            listReportPath.add(reportPath + "Invoice/Invoice.jrxml");
 
             /*
             // untuk mengecek apakah file ada atau tidak
@@ -88,6 +89,8 @@ public class ReportCreator {
                 return listReportPath.get(4);
             case "Karyawan":
                 return listReportPath.get(5);
+            case "Invoice":
+                return listReportPath.get(6);
             default:
                 return "";
         }

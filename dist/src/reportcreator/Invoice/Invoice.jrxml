@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b88803b3-981b-4a1c-91ac-bcec936b51c4">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
@@ -44,76 +44,87 @@ FROM
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="281" splitType="Stretch">
+		<band height="324" splitType="Stretch">
 			<staticText>
-				<reportElement style="Column header" x="1" y="125" width="101" height="15" forecolor="#736343" uuid="36b6a2a7-55d0-4d32-b609-c022ec152c6e"/>
+				<reportElement style="Column header" x="0" y="95" width="101" height="15" forecolor="#736343" uuid="36b6a2a7-55d0-4d32-b609-c022ec152c6e"/>
 				<text><![CDATA[Tanggal Surat]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="Detail" x="126" y="125" width="657" height="15" uuid="010c538c-19e1-49b3-a606-3586517c5b38"/>
+				<reportElement style="Detail" x="125" y="95" width="657" height="15" uuid="010c538c-19e1-49b3-a606-3586517c5b38"/>
 				<textFieldExpression><![CDATA[""+$F{tanggalNota}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="1" y="96" width="101" height="15" forecolor="#736343" uuid="d880c087-8aa7-4b1f-861e-45f5ea879516"/>
+				<reportElement style="Column header" x="0" y="66" width="101" height="15" forecolor="#736343" uuid="d880c087-8aa7-4b1f-861e-45f5ea879516"/>
 				<text><![CDATA[No Nota]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="Detail" x="126" y="96" width="657" height="15" uuid="ba74db7d-b520-409c-a7cd-841091109028"/>
+				<reportElement style="Detail" x="125" y="66" width="657" height="15" uuid="ba74db7d-b520-409c-a7cd-841091109028"/>
 				<textFieldExpression><![CDATA[""+$F{noNota}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="14" width="222" height="28" uuid="f6d9cb99-5545-4cdd-addd-5e616049c11a"/>
-				<textElement>
-					<font size="22" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Surat Jalan]]></text>
-			</staticText>
 			<textField>
-				<reportElement x="126" y="150" width="657" height="15" uuid="89ea8b91-836c-451c-af58-ca9e15e9f5b8"/>
+				<reportElement x="125" y="120" width="657" height="15" uuid="89ea8b91-836c-451c-af58-ca9e15e9f5b8"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{namaPengirim}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="1" y="150" width="101" height="15" forecolor="#736343" uuid="a231c741-18c3-4c1a-a4a5-66568d0b8de7"/>
+				<reportElement style="Column header" x="0" y="120" width="101" height="15" forecolor="#736343" uuid="a231c741-18c3-4c1a-a4a5-66568d0b8de7"/>
 				<text><![CDATA[Nama Pengirim]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="178" width="657" height="20" uuid="aa04f46f-ce38-4aba-8f1f-244e3c75d25a"/>
+				<reportElement x="125" y="148" width="657" height="20" uuid="aa04f46f-ce38-4aba-8f1f-244e3c75d25a"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{alamatPengirim}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="1" y="178" width="101" height="15" forecolor="#736343" uuid="bbbf7b76-0f26-4a7e-8a55-fa6a270e8fce"/>
+				<reportElement style="Column header" x="0" y="148" width="101" height="15" forecolor="#736343" uuid="bbbf7b76-0f26-4a7e-8a55-fa6a270e8fce"/>
 				<text><![CDATA[Alamat Pengirim]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="210" width="657" height="20" uuid="ddc32e0f-17e6-40ea-96a0-6ec559760f31"/>
+				<reportElement x="125" y="180" width="657" height="20" uuid="ddc32e0f-17e6-40ea-96a0-6ec559760f31"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{namaPenerima}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="1" y="210" width="101" height="15" forecolor="#736343" uuid="6aa14a10-3965-4e33-90a8-5a54267a715f"/>
+				<reportElement style="Column header" x="0" y="180" width="101" height="15" forecolor="#736343" uuid="6aa14a10-3965-4e33-90a8-5a54267a715f"/>
 				<text><![CDATA[Nama Penerima]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="242" width="657" height="20" uuid="100fab2d-1bc4-4d16-8200-3b784b081fd4"/>
+				<reportElement x="125" y="212" width="657" height="20" uuid="100fab2d-1bc4-4d16-8200-3b784b081fd4"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{alamatPenerima}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="0" y="242" width="101" height="15" forecolor="#736343" uuid="c36603b4-ac5e-4a08-8f49-94cf7bed183b"/>
+				<reportElement style="Column header" x="-1" y="212" width="101" height="15" forecolor="#736343" uuid="c36603b4-ac5e-4a08-8f49-94cf7bed183b"/>
 				<text><![CDATA[Alamat Penerima]]></text>
 			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="125" y="246" width="657" height="20" uuid="82c1e631-aebb-477f-9ce8-2090b308c8c0"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{biayaKirim}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="1" y="42" width="222" height="27" uuid="be0096d0-ce7b-4fac-874c-dc366ecd0941"/>
+				<reportElement style="Column header" x="0" y="246" width="101" height="15" forecolor="#736343" uuid="cfbd2481-9135-46f3-be67-c61dc25ac1dd"/>
+				<text><![CDATA[Biaya Kirim]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="222" height="28" uuid="f1f06463-899a-4d45-9066-8bfeea66500c"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="222" height="27" uuid="5fc4cfeb-9920-4d35-993d-5af7e68d3e85"/>
 				<textElement>
 					<font size="16" isBold="true"/>
 				</textElement>

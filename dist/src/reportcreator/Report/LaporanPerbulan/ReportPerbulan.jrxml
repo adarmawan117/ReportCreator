@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3b3e25d4-37ca-46be-a053-117709661378">
 	<property name="ireport.zoom" value="1.210000000000004"/>
-	<property name="ireport.x" value="71"/>
+	<property name="ireport.x" value="296"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
@@ -102,7 +102,7 @@ FROM
 					<reportElement style="Detail" x="536" y="0" width="133" height="15" uuid="b380f940-d789-4f9d-a413-ff933c1c6eb8"/>
 					<textFieldExpression><![CDATA[""+$F{namaPengirim}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" pattern="#,##0.00">
 					<reportElement style="Detail" x="669" y="0" width="133" height="15" uuid="54b24e3f-04d6-4720-9c2d-90cc95226be1"/>
 					<textFieldExpression><![CDATA[""+$F{biayaKirim}]]></textFieldExpression>
 				</textField>
